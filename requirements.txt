@@ -1,0 +1,9 @@
+pymongo==3.10.1
+python-dotenv==0.13.0
+Scrapy~=2.1.0
+numpy~=1.18.4
+ConsoleMenu~=1.0.1
+scikit-learn~=0.23.1
+matplotlib~=3.2.1
+pandas~=1.0.3
+scipy~=1.4.1
