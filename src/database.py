@@ -36,7 +36,6 @@ def backup(filepath):
         writer.writeheader()
         for item in data:
             del item['_id']
-            del item['origin_url']
             writer.writerow(item)
 
 
@@ -46,4 +45,9 @@ def restore(filepath):
     with open(filepath, 'r') as file:
         reader = csv.DictReader(file)
         for row in reader:
+            row["temp"] = int(row["temp"])
+            row["humidity"] = int(row["humidity"])
+            row["wind_speed"] = float(row["wind_speed"])
+            row["pressure"] = float(row["pressure"])
+            row["aqi"] = float(row["aqi"])
             collection.insert(row)
